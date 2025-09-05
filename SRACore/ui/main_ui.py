@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.2
+## Created by: Qt User Interface Compiler version 6.7.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -30,9 +30,12 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(13)
         MainWindow.setFont(font)
-        MainWindow.setStyleSheet(u"background-repeat: no-repeat;\n"
-"                background-position: center;\n"
-"                background-color: rgba(255, 255, 255, 0.2);")
+        MainWindow.setStyleSheet(u"#MainWindow{\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"background-color: rgba(255, 255, 255, 0.2);\n"
+"border-image:  url('resources/background_image.png');\n"
+"}")
         self.announcement_action = QAction(MainWindow)
         self.announcement_action.setObjectName(u"announcement_action")
         self.faq_action = QAction(MainWindow)
@@ -61,7 +64,7 @@ class Ui_MainWindow(object):
         self.task_select_groupBox.setSizePolicy(sizePolicy)
         self.task_select_groupBox.setMinimumSize(QSize(0, 0))
         self.task_select_groupBox.setMaximumSize(QSize(16777215, 16777215))
-        self.task_select_groupBox.setStyleSheet(u"background-color: transparent")
+        self.task_select_groupBox.setStyleSheet(u"background-color: transparent;")
         self.horizontalLayout_23 = QHBoxLayout(self.task_select_groupBox)
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
         self.task_select_scrollArea = QScrollArea(self.task_select_groupBox)
@@ -73,6 +76,55 @@ class Ui_MainWindow(object):
         self.task_select_scrollArea.setSizePolicy(sizePolicy1)
         self.task_select_scrollArea.setMinimumSize(QSize(225, 0))
         self.task_select_scrollArea.setMaximumSize(QSize(225, 16777215))
+        self.task_select_scrollArea.setStyleSheet(u"/* \u7ea4\u7ec6\u73b0\u4ee3\u98ce\u683c\u6eda\u52a8\u6761 */\n"
+"QScrollArea {\n"
+"    border: none;\n"
+"    background: transparent;\n"
+"}\n"
+"\n"
+"QScrollArea > QWidget {\n"
+"    background-color: #f8f9fa; /* \u5185\u5bb9\u533a\u57df\u80cc\u666f\u8272 */\n"
+"}\n"
+"\n"
+"/* \u6eda\u52a8\u6761\u6574\u4f53\uff08\u66f4\u7ec6\uff09 */\n"
+"QScrollBar:vertical {\n"
+"    width: 8px; /* \u5782\u76f4\u6eda\u52a8\u6761\u5bbd\u5ea6 */\n"
+"    background: transparent; /* \u80cc\u666f\u900f\u660e */\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
+"    height: 8px; /* \u6c34\u5e73\u6eda\u52a8\u6761\u9ad8\u5ea6 */\n"
+"    background: transparent;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"/* \u6ed1\u5757\uff08\u66f4\u7cbe\u81f4\uff09 */\n"
+"QScrollBar::handle:vertical, QScrollBar::handle:horizontal {\n"
+"    background: rgba(150, 150, 150, 0.4); /* \u534a\u900f\u660e\u7070\u8272 */\n"
+"    border-radius: 4px; /* \u7a0d\u5c0f\u7684\u5706\u89d2 */\n"
+"    min-width: 8px; /* \u6700\u5c0f\u5bbd\u5ea6\uff08\u9632\u6b62\u8fc7\u7ec6"
+                        "\uff09 */\n"
+"    min-height: 8px; /* \u6700\u5c0f\u9ad8\u5ea6\uff08\u9632\u6b62\u8fc7\u7ec6\uff09 */\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical:hover, \n"
+"QScrollBar::handle:horizontal:hover {\n"
+"    background: rgba(120, 120, 120, 0.6); /* \u60ac\u505c\u65f6\u66f4\u6df1 */\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical:pressed, \n"
+"QScrollBar::handle:horizontal:pressed {\n"
+"    background: rgba(100, 100, 100, 0.8); /* \u70b9\u51fb\u65f6\u66f4\u6df1 */\n"
+"}\n"
+"\n"
+"/* \u9690\u85cf\u6eda\u52a8\u6761\u6309\u94ae\u548c\u89d2\u843d\u533a\u57df */\n"
+"QScrollBar::add-line, QScrollBar::sub-line,\n"
+"QScrollBar::add-page, QScrollBar::sub-page {\n"
+"    background: none;\n"
+"    height: 0px;\n"
+"    width: 0px;\n"
+"}")
         self.task_select_scrollArea.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents)
         self.task_select_scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
@@ -83,9 +135,9 @@ class Ui_MainWindow(object):
         self.frame1_1 = QFrame(self.scrollAreaWidgetContents_2)
         self.frame1_1.setObjectName(u"frame1_1")
         self.frame1_1.setStyleSheet(u"border-radius: 8px;\n"
-"border: 1.2px solid black;\n"
-"background-color: rgba(255, 255, 255, 0.8);\n"
-"  font-size: 16px;")
+"border: 1.2px solid gray;\n"
+"background-color: rgba(255, 255, 255, 0.6);\n"
+"font-size: 16px;")
         self.frame1_1.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame1_1.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame1_1)
@@ -93,7 +145,7 @@ class Ui_MainWindow(object):
         self.start_game_checkBox = QCheckBox(self.frame1_1)
         self.start_game_checkBox.setObjectName(u"start_game_checkBox")
         self.start_game_checkBox.setMinimumSize(QSize(0, 30))
-        self.start_game_checkBox.setStyleSheet(u"checkbox1\uff1afont-size: 14px;border: none;font-weight:bold;")
+        self.start_game_checkBox.setStyleSheet(u"border: none;")
 
         self.horizontalLayout.addWidget(self.start_game_checkBox)
 
@@ -111,8 +163,8 @@ class Ui_MainWindow(object):
         self.frame1_2 = QFrame(self.scrollAreaWidgetContents_2)
         self.frame1_2.setObjectName(u"frame1_2")
         self.frame1_2.setStyleSheet(u"border-radius: 8px;\n"
-"border: 1.2px solid black;\n"
-"background-color: rgba(255, 255, 255, 0.8);\n"
+"border: 1.2px solid gray;\n"
+"background-color: rgba(255, 255, 255, 0.6);\n"
 "font-size: 16px;")
         self.frame1_2.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame1_2.setFrameShadow(QFrame.Shadow.Raised)
@@ -121,7 +173,7 @@ class Ui_MainWindow(object):
         self.trailblaze_power_checkBox = QCheckBox(self.frame1_2)
         self.trailblaze_power_checkBox.setObjectName(u"trailblaze_power_checkBox")
         self.trailblaze_power_checkBox.setMinimumSize(QSize(0, 30))
-        self.trailblaze_power_checkBox.setStyleSheet(u"checkbox1\uff1afont-size: 14px;border: none;font-weight:bold;")
+        self.trailblaze_power_checkBox.setStyleSheet(u"border: none;")
 
         self.horizontalLayout_7.addWidget(self.trailblaze_power_checkBox)
 
@@ -139,8 +191,8 @@ class Ui_MainWindow(object):
         self.frame1_3 = QFrame(self.scrollAreaWidgetContents_2)
         self.frame1_3.setObjectName(u"frame1_3")
         self.frame1_3.setStyleSheet(u"border-radius: 8px;\n"
-"border: 1.2px solid black;\n"
-"background-color: rgba(255, 255, 255, 0.8);\n"
+"border: 1.2px solid gray;\n"
+"background-color: rgba(255, 255, 255, 0.6);\n"
 "font-size: 16px;")
         self.frame1_3.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame1_3.setFrameShadow(QFrame.Shadow.Raised)
@@ -149,7 +201,7 @@ class Ui_MainWindow(object):
         self.receive_reward_checkBox = QCheckBox(self.frame1_3)
         self.receive_reward_checkBox.setObjectName(u"receive_reward_checkBox")
         self.receive_reward_checkBox.setMinimumSize(QSize(0, 30))
-        self.receive_reward_checkBox.setStyleSheet(u"checkbox1\uff1afont-size: 14px;border: none;font-weight:bold;")
+        self.receive_reward_checkBox.setStyleSheet(u"border: none;")
 
         self.horizontalLayout_3.addWidget(self.receive_reward_checkBox)
 
@@ -168,9 +220,9 @@ class Ui_MainWindow(object):
         self.frame1_5.setObjectName(u"frame1_5")
         self.frame1_5.setEnabled(True)
         self.frame1_5.setStyleSheet(u"border-radius: 8px;\n"
-"border: 1.2px solid black;\n"
-"background-color: rgba(255, 255, 255, 0.8);\n"
-" font-size: 16px;")
+"border: 1.2px solid gray;\n"
+"background-color: rgba(255, 255, 255, 0.6);\n"
+"font-size: 16px;")
         self.frame1_5.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame1_5.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_20 = QHBoxLayout(self.frame1_5)
@@ -178,7 +230,7 @@ class Ui_MainWindow(object):
         self.simulate_universe_checkBox = QCheckBox(self.frame1_5)
         self.simulate_universe_checkBox.setObjectName(u"simulate_universe_checkBox")
         self.simulate_universe_checkBox.setMinimumSize(QSize(0, 30))
-        self.simulate_universe_checkBox.setStyleSheet(u"checkbox1\uff1afont-size: 14px;border: none;font-weight:bold;")
+        self.simulate_universe_checkBox.setStyleSheet(u"border: none;")
 
         self.horizontalLayout_20.addWidget(self.simulate_universe_checkBox)
 
@@ -196,9 +248,9 @@ class Ui_MainWindow(object):
         self.frame1_4 = QFrame(self.scrollAreaWidgetContents_2)
         self.frame1_4.setObjectName(u"frame1_4")
         self.frame1_4.setStyleSheet(u"border-radius: 8px;\n"
-"border: 1.2px solid black;\n"
-"background-color: rgba(255, 255, 255, 0.8);\n"
-"  font-size: 16px;")
+"border: 1.2px solid gray;\n"
+"background-color: rgba(255, 255, 255, 0.6);\n"
+"font-size: 16px;")
         self.frame1_4.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame1_4.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_10 = QHBoxLayout(self.frame1_4)
@@ -206,7 +258,7 @@ class Ui_MainWindow(object):
         self.mission_accomplish_checkBox = QCheckBox(self.frame1_4)
         self.mission_accomplish_checkBox.setObjectName(u"mission_accomplish_checkBox")
         self.mission_accomplish_checkBox.setMinimumSize(QSize(0, 30))
-        self.mission_accomplish_checkBox.setStyleSheet(u"checkbox1\uff1afont-size: 14px;border: none;font-weight:bold;")
+        self.mission_accomplish_checkBox.setStyleSheet(u"border: none;")
 
         self.horizontalLayout_10.addWidget(self.mission_accomplish_checkBox)
 
@@ -224,8 +276,8 @@ class Ui_MainWindow(object):
         self.frame1_0 = QFrame(self.scrollAreaWidgetContents_2)
         self.frame1_0.setObjectName(u"frame1_0")
         self.frame1_0.setStyleSheet(u"border-radius: 8px;\n"
-"border: 1.2px solid black;\n"
-"background-color: rgba(255, 255, 255, 0.8);\n"
+"border: 1.2px solid gray;\n"
+"background-color: rgba(255, 255, 255, 0.6);\n"
 "font-size: 16px;")
         self.frame1_0.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame1_0.setFrameShadow(QFrame.Shadow.Raised)
@@ -239,7 +291,7 @@ class Ui_MainWindow(object):
         self.stop_pushButton = QPushButton(self.frame1_0)
         self.stop_pushButton.setObjectName(u"stop_pushButton")
         self.stop_pushButton.setEnabled(False)
-        self.stop_pushButton.setMinimumSize(QSize(80, 30))
+        self.stop_pushButton.setMinimumSize(QSize(0, 0))
 
         self.horizontalLayout_12.addWidget(self.stop_pushButton)
 
@@ -262,16 +314,16 @@ class Ui_MainWindow(object):
         self.log_textBrowser.setSizePolicy(sizePolicy2)
         self.log_textBrowser.setMaximumSize(QSize(16777215, 100))
         self.log_textBrowser.setStyleSheet(u"border-radius: 8px;\n"
-"border: 1.2px solid black;\n"
-"background-color: rgba(255, 255, 255, 0.8);")
+"border: 1.2px solid gray;\n"
+"background-color: rgba(255, 255, 255, 0.6);")
 
         self.gridLayout_2.addWidget(self.log_textBrowser, 1, 0, 1, 3)
 
         self.task_setting_groupBox = QGroupBox(self.console_tab)
         self.task_setting_groupBox.setObjectName(u"task_setting_groupBox")
         self.task_setting_groupBox.setStyleSheet(u"border: none;\n"
-"                                                border-radius: 8px;\n"
-"                                                background-color: rgba(255, 255, 255, 0.6);")
+"border-radius: 8px;\n"
+"background-color: rgba(255, 255, 255, 0.6);")
         self.verticalLayout_2 = QVBoxLayout(self.task_setting_groupBox)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
 

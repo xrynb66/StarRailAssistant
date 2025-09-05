@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>447</width>
-    <height>616</height>
+    <width>426</width>
+    <height>545</height>
    </rect>
   </property>
   <property name="font">
@@ -53,7 +53,13 @@
          <string notr="true">border:none</string>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;启动游戏&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>启动游戏</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -63,7 +69,54 @@
    <item row="1" column="0">
     <widget class="QScrollArea" name="scrollArea">
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(255, 255, 255, 0.6);</string>
+      <string notr="true">/* 纤细现代风格滚动条 */
+QScrollArea {
+    border: none;
+    background: transparent;
+}
+
+QScrollArea &gt; QWidget {
+    background-color: #f8f9fa; /* 内容区域背景色 */
+}
+
+/* 滚动条整体（更细） */
+QScrollBar:vertical {
+    width: 8px; /* 垂直滚动条宽度 */
+    background: transparent; /* 背景透明 */
+    margin: 0;
+}
+
+QScrollBar:horizontal {
+    height: 8px; /* 水平滚动条高度 */
+    background: transparent;
+    margin: 0;
+}
+
+/* 滑块（更精致） */
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background: rgba(150, 150, 150, 0.4); /* 半透明灰色 */
+    border-radius: 4px; /* 稍小的圆角 */
+    min-width: 8px; /* 最小宽度（防止过细） */
+    min-height: 8px; /* 最小高度（防止过细） */
+}
+
+QScrollBar::handle:vertical:hover, 
+QScrollBar::handle:horizontal:hover {
+    background: rgba(120, 120, 120, 0.6); /* 悬停时更深 */
+}
+
+QScrollBar::handle:vertical:pressed, 
+QScrollBar::handle:horizontal:pressed {
+    background: rgba(100, 100, 100, 0.8); /* 点击时更深 */
+}
+
+/* 隐藏滚动条按钮和角落区域 */
+QScrollBar::add-line, QScrollBar::sub-line,
+QScrollBar::add-page, QScrollBar::sub-page {
+    background: none;
+    height: 0px;
+    width: 0px;
+}</string>
      </property>
      <property name="widgetResizable">
       <bool>true</bool>
@@ -73,17 +126,16 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>427</width>
-        <height>497</height>
+        <width>400</width>
+        <height>441</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QFrame" name="frame2_1">
          <property name="styleSheet">
-          <string notr="true">
-border: 1.4px solid black;  font-size: 16px;
-                                                      </string>
+          <string notr="true">border: 1.4px solid gray;  font-size: 16px;
+border-radius: 8px;</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Shape::StyledPanel</enum>
@@ -98,7 +150,7 @@ border: 1.4px solid black;  font-size: 16px;
              <string notr="true">border:none</string>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;渠道：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>渠道: </string>
             </property>
            </widget>
           </item>
@@ -107,19 +159,85 @@ border: 1.4px solid black;  font-size: 16px;
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>30</height>
+              <height>0</height>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">font-weight: bold;
-                                                    QCombox{border: solid black;border-radius: 0;font-weight: bold;}
-                                                    QComboBox:hover {
-                                                    background-color: #f0f0f0;
-                                                    border-color: #bbb;
-                                                    }
-                                                    QComboBox QAbstractItemView {
-                                                    selection-background-color: #f0f0f0; background-color: white;
-                                                    }</string>
+             <string notr="true">QComboBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 14px;
+}
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    border:none;
+}
+QComboBox::down-arrow {
+    image: url(&quot;resources/ui/down-arrow.png&quot;);
+}
+
+/* 悬停效果 */
+QComboBox:hover {
+    border-color: #bdbdbd;
+    background-color: #f8f9fa;
+}
+ 
+/* 按下状态 */
+QComboBox:pressed {
+    background-color: #eeeeee;
+    border-color: #adadad;
+}
+ 
+/* 下拉列表样式 */
+QComboBox QAbstractItemView {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    selection-background-color: #f5f9ff;
+    selection-color: #1976d2;
+    padding: 8px 0;
+    margin-top: 8px;
+    outline: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+ 
+/* 列表项样式 */
+QComboBox QAbstractItemView::item {
+    padding: 10px 16px;
+    min-height: 20px;
+    border: none;
+}
+ 
+/* 列表项悬停效果 */
+QComboBox QAbstractItemView::item:hover {
+    background-color: #f0f7ff;
+    color: #1976d2;
+}
+ 
+/* 选中项样式 */
+QComboBox QAbstractItemView::item:selected {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    font-weight: 500;
+}
+ 
+/* 禁用状态 */
+QComboBox:disabled {
+    background-color: #f5f5f5;
+    color: #9e9e9e;
+    border-color: #e0e0e0;
+}
+ 
+/* 箭头悬停效果 */
+QComboBox::drop-down:hover {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}</string>
             </property>
             <item>
              <property name="text">
@@ -139,8 +257,8 @@ border: 1.4px solid black;  font-size: 16px;
        <item>
         <widget class="QFrame" name="frame_3">
          <property name="styleSheet">
-          <string notr="true">
-border: 1.4px solid black;  font-size: 16px;</string>
+          <string notr="true">border: 1.4px solid gray;
+border-radius:  8px</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Shape::StyledPanel</enum>
@@ -160,11 +278,19 @@ border: 1.4px solid black;  font-size: 16px;</string>
               <height>30</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
             <property name="toolTip">
              <string/>
             </property>
             <property name="autoFillBackground">
              <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: none;</string>
             </property>
             <property name="text">
              <string>使用启动器</string>
@@ -183,8 +309,8 @@ border: 1.4px solid black;  font-size: 16px;</string>
        <item>
         <widget class="QFrame" name="frame2_2">
          <property name="styleSheet">
-          <string notr="true">
-border: 1.4px solid black;  font-size: 16px;</string>
+          <string notr="true">border: 1px solid gray;
+border-radius: 8px</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Shape::StyledPanel</enum>
@@ -196,10 +322,10 @@ border: 1.4px solid black;  font-size: 16px;</string>
           <item>
            <widget class="QLabel" name="path_label">
             <property name="styleSheet">
-             <string notr="true">border:none</string>
+             <string notr="true">border:none;</string>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;游戏路径：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>游戏路径：</string>
             </property>
            </widget>
           </item>
@@ -309,7 +435,7 @@ border: 1.4px solid black;  font-size: 16px;</string>
                 </font>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;勾选自动登录表明您已阅读并同意《用户协议》和《隐私政策》&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>勾选自动登录表明您已阅读并同意《用户协议》和《隐私政策》</string>
                </property>
                <property name="wordWrap">
                 <bool>true</bool>
@@ -360,7 +486,7 @@ border: 1.4px solid black;  font-size: 16px;</string>
                 <string notr="true">border:none</string>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;账号：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>账号：</string>
                </property>
               </widget>
              </item>
@@ -383,7 +509,7 @@ border: 1.4px solid black;  font-size: 16px;</string>
                 <string notr="true">border:none</string>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;密码：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>密码：</string>
                </property>
               </widget>
              </item>

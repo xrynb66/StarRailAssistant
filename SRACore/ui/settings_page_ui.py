@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'settings_page.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.2
+## Created by: Qt User Interface Compiler version 6.7.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -96,7 +96,7 @@ class Ui_SettingWidget(object):
         __qtablewidgetitem4 = QTableWidgetItem()
         self.key_tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem4)
         brush = QBrush(QColor(0, 0, 0, 255))
-        brush.setStyle(Qt.BrushStyle.NoBrush)
+        brush.setStyle(Qt.NoBrush)
         __qtablewidgetitem5 = QTableWidgetItem()
         __qtablewidgetitem5.setForeground(brush);
         self.key_tableWidget.setItem(0, 0, __qtablewidgetitem5)
